@@ -1,0 +1,13 @@
+{
+    "name": "Custom Text Highlight",
+    "description": "Extension that allows you to overwrite text highlight colors on most websites.",
+    "version": "1.0",
+    "manifest_version": 3,
+    "permissions": [
+        "storage"
+    ],
+    "options_page": "index.html",
+    "action": {
+        "default_popup": "index.html"
+    }
+}
