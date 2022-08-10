@@ -5,7 +5,7 @@
 	import Selector from './lib/components/selector.svelte';
 </script>
 
-<!-- TODO: add actual save and load functionality (svelte stores?) with a toggle checkbox -->
+<!-- TODO: add dark mode toggle add toggle check to disable plugin functionality and ::selection functionality for all webpages -->
 
 <div class="app dark:bg-neutral-800 ">
 	<div
