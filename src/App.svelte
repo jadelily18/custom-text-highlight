@@ -16,7 +16,7 @@
 	};
 </script>
 
-<!-- TODO: add dark mode toggle add toggle check to disable plugin functionality and ::selection functionality for all webpages -->
+<!-- TODO: add toggle check to disable plugin functionality and ::selection functionality for all webpages -->
 
 <div class:dark>
 	<div class="app dark:bg-neutral-800">

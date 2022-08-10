@@ -6,8 +6,18 @@
     "permissions": [
         "storage"
     ],
+    "host_permissions": [
+        "*://*/*"
+    ],
     "options_page": "index.html",
     "action": {
         "default_popup": "index.html"
-    }
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://*/*", "http://*/*"],
+            "run_at": "document_idle",
+            "js": ["injectCss.js"]
+        }
+    ]
 }
