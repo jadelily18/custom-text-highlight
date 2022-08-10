@@ -1,11 +1,13 @@
 import { writable } from "svelte/store";
 
-export const theme = writable(localStorage.theme)
+
+export const darkMode = writable(JSON.parse(localStorage.darkMode))
 export const bgHighlightColor = writable(localStorage.bgHighlightColor)
 export const textHighlightColor = writable(localStorage.textHighlightColor)
 
-theme.subscribe(value => {
-    localStorage.theme = value
+
+darkMode.subscribe(value => {
+    localStorage.darkMode = value
 })
 
 bgHighlightColor.subscribe(value => {
