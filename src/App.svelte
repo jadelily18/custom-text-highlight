@@ -1,12 +1,22 @@
 <script lang="ts">
 	import './app.css';
-	import { bgHighlightColor, textHighlightColor, darkMode } from './stores';
+
+	import { darkMode, bgHighlightColor, textHighlightColor } from './stores';
 
 	import Selector from './lib/components/selector.svelte';
 	import ThemeToggle from './lib/components/ThemeToggle.svelte';
 
-	if ($darkMode != true && $darkMode != false) {
-		$darkMode = true;
+	// if ($darkMode != true && $darkMode != false) {
+	// 	$darkMode = true;
+	// }
+
+	function saveValues() {
+		chrome.storage.sync.set({ bgHighlightColor: $bgHighlightColor }, () => {
+			console.log('Background Highlight Color set to: ', $bgHighlightColor);
+		});
+		chrome.storage.sync.set({ textHighlightColor: $textHighlightColor }, () => {
+			console.log('Text Highlight Color set to: ', $textHighlightColor);
+		});
 	}
 
 	$: dark = $darkMode;
@@ -47,6 +57,11 @@
 				/>
 				<Selector label="Text Highlight" placeholder="Text Highlight" selector="text" />
 			</div>
+
+			<button
+				class="w-full p-2.5 rounded-md bg-blue-500 hover:bg-blue-400 active:bg-blue-600 text-white font-semibold transition-all"
+				on:click={saveValues}>Set & Save</button
+			>
 		</div>
 
 		<div class="flex p-2 pt-0.5 px-4 justify-between font-semibold dark:text-white">

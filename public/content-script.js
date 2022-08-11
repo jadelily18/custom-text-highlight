@@ -1,5 +1,15 @@
-let backgroundColor = localStorage.bgHighlightColor;
-let textColor = localStorage.textHighlightColor;
+let backgroundColor;
+let textColor;
+
+// i have absolutely no fucking clue what is happening
+
+chrome.storage.sync.get(['bgHighlightColor'], (result) => {
+	backgroundColor = result.bgHighlightColor;
+});
+
+chrome.storage.sync.get(['textHighlightColor'], (result) => {
+	textColor = result.textHighlightColor;
+});
 
 let style = document.createElement('style');
 

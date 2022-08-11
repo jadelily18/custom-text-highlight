@@ -17,7 +17,7 @@
         {
             "matches": ["https://*/*", "http://*/*"],
             "run_at": "document_idle",
-            "js": ["injectCss.js"]
+            "js": ["content-script.js"]
         }
     ]
 }
